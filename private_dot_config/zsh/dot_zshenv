@@ -43,7 +43,7 @@ path=(
 
 # Apps
 export EDITOR=vim
-export VISUAL=code
+export VISUAL="code --wait"
 export PAGER=less
 
 # Regional settings
