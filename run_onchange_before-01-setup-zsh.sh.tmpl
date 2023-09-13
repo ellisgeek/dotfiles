@@ -1,0 +1,19 @@
+#!/bin/bash
+
+{{ if not (and (lookPath "zsh") (lookPath "git")) -}}
+sudo apt-get install -y zsh git
+{{ end -}}
+
+[[ $(getent passwd $USER | cut -d ':' -f 7) == *"zsh"* ]] || 
+  chsh -s /usr/bin/zsh
+
+# ZDOTDIR=$HOME/.config/zsh
+
+# mkdir -p $ZDOTDIR
+
+# git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
+
+{{ if not (lookPath "starship") -}}
+curl -sS https://starship.rs/install.sh | shi
+{{ end -}}
+
