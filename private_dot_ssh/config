@@ -1,0 +1,7 @@
+Host *
+    ServerAliveInterval 60
+    ServerAliveCountMax 5
+    Compression yes
+    ControlMaster auto
+    ControlPath ~/.ssh/sockets/%r_%h_%p
+    ControlPersist 3600
