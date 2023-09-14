@@ -15,11 +15,35 @@ export ANTIDOTE_HOME=${XDG_CACHE_HOME:=~/.cache}/repos
   git clone --depth 1 --quiet https://github.com/mattmc3/antidote $ZDOTDIR/.antidote
 
 source $ZDOTDIR/.antidote/antidote.zsh
+
+# # Prompt
+# source $ZDOTDIR/themes/syne.p10k.zsh
+
+autoload -Uz bashcompinit && bashcompinit
+
+export ZSH_CACHE_DIR="$(antidote path ohmyzsh/ohmyzsh)"
+mkdir -p "$ZSH_CACHE_DIR/completions"
+(( ${fpath[(Ie)"$ZSH_CACHE_DIR/completions"]} )) || fpath=("$ZSH_CACHE_DIR/completions" $fpath)
+
+# Load me last
+GENCOMPL_FPATH=$HOME/.zsh/complete
+
+# Set keystrokes for substring searching
+zmodload zsh/terminfo
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
+
 antidote load
 
 # prompt
 prompt starship
-#prompt p10k pure
+# prompt p10k pure
+
+# python
+eval "$(pyenv init -)"
+eval "$(register-python-argcomplete3 pipx)"
+
+[[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)" && export EDITOR="code --wait"
 
 # done profiling
 [[ -z "$ZPROFRC" ]] || zprof

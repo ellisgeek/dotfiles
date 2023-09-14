@@ -1,46 +1,83 @@
-#
-# .zplugins - antidote plugins file
-#
+##
+## .zplugins - antidote plugins file
+##
 
-# Pre-reqs
+## Pre-reqs
 mattmc3/zdotdir path:plugins/xdg
 mattmc3/zephyr path:plugins/zfunctions
 
-# Zephyr
+## Zephyr
 mattmc3/zephyr path:plugins/environment
-mattmc3/zephyr path:plugins/clipboard
+# mattmc3/zephyr path:plugins/clipboard
 mattmc3/zephyr path:plugins/color
-mattmc3/zephyr path:plugins/directory
-mattmc3/zephyr path:plugins/editor
+# mattmc3/zephyr path:plugins/directory
+# mattmc3/zephyr path:plugins/editor
 mattmc3/zephyr path:plugins/history
 # mattmc3/zephyr path:plugins/homebrew
-mattmc3/zephyr path:plugins/utility
+# mattmc3/zephyr path:plugins/utility
 
-# zdotdir
-mattmc3/zdotdir path:plugins/prompt
+## zdotdir
+# mattmc3/zdotdir path:plugins/prompt
+mattmc3/zdotdir path:plugins/p10k-instaprompt
 
-# omz
+## OMZ
+# ohmyzsh/ohmyzsh path:lib
+# ohmyzsh/ohmyzsh path:plugins/git
+ohmyzsh/ohmyzsh path:plugins/keychain
+ohmyzsh/ohmyzsh path:plugins/git-auto-fetch
+ohmyzsh/ohmyzsh path:plugins/colorize
+ohmyzsh/ohmyzsh path:plugins/colored-man-pages
+# ohmyzsh/ohmyzsh path:plugins/aliases
+ohmyzsh/ohmyzsh path:plugins/thefuck
 ohmyzsh/ohmyzsh path:plugins/magic-enter
-ohmyzsh/ohmyzsh path:plugins/fancy-ctrl-z
+# ohmyzsh/ohmyzsh path:plugins/fancy-ctrl-z
 
-# my custom plugins
+## Custom Plugins
 
-# prompts
-romkatv/powerlevel10k kind:fpath
+# Add Fish-like autosuggestions to your ZSH.
+zsh-users/zsh-autosuggestions
 
-# utilities
+## prompts
+romkatv/powerlevel10k
+
+## utilities
 # ajeetdsouza/zoxide
 # mattmc3/zman
 
-# final
+## final
 zsh-users/zsh-completions kind:fpath path:src
 mattmc3/zephyr path:plugins/completion
 mattmc3/zephyr path:plugins/confd
 
-# deferred plugins
+## deferred plugins
+ohmyzsh/ohmyzsh path:plugins/nvm kind:defer
+ohmyzsh/ohmyzsh path:plugins/node kind:defer
+ohmyzsh/ohmyzsh path:plugins/tmux kind:defer
+ohmyzsh/ohmyzsh path:plugins/poetry kind:defer
+ohmyzsh/ohmyzsh path:plugins/pip kind:defer
+ohmyzsh/ohmyzsh path:plugins/isodate kind:defer
 zdharma-continuum/fast-syntax-highlighting kind:defer
 zsh-users/zsh-autosuggestions kind:defer
 zsh-users/zsh-history-substring-search kind:defer
 
-# vim: ft=zsh sw=2 ts=2 et
+# Very cool plugin that generates zsh completion functions for commands
+# if they have getopt-style help text. It doesn't generate them on the fly,
+# you'll have to explicitly generate a completion, but it's still quite cool.
+RobSis/zsh-completion-generator kind:defer
 
+# k is a zsh script / plugin to make directory listings more readable,
+# adding a bit of color and some git status information on files and
+# directories.
+supercrabtree/k kind:defer
+
+# Warn you when you run a command that you've set an alias for without
+# using the alias.
+djui/alias-tips kind:defer
+
+# Supercharge your history search with fzf
+unixorn/fzf-zsh-plugin kind:defer
+
+# Docker completion
+srijanshetty/docker-zsh kind:defer
+
+# vim: ft=zsh sw=2 ts=2 et
