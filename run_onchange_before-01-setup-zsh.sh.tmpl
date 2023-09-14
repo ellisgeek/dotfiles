@@ -1,17 +1,16 @@
 #!/bin/bash
 
-{{ if not (and (lookPath "zsh") (lookPath "git")) -}}
-sudo apt-get install -y zsh git
+echo -e "\n01 - Setting up ZSH"
+
+{{ if not (and (lookPath "zsh") (lookPath "git") (lookPath "fzf")) -}}
+echo -e "01.01 - Installing ZSH"
+sudo apt-get -y install zsh git fzf
 {{ end -}}
 
-[[ $(getent passwd $USER | cut -d ':' -f 7) == *"zsh"* ]] || 
-  chsh -s /usr/bin/zsh
-
-# ZDOTDIR=$HOME/.config/zsh
-
-# mkdir -p $ZDOTDIR
-
-# git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
+if [[ $(getent passwd $USER | cut -d ':' -f 7) != *"zsh"* ]]; then
+    echo -e "\n01.03 - Setting shell to ZSH"
+    chsh -s /usr/bin/zsh
+fi
 
 {{ if not (lookPath "starship") -}}
 curl -sS https://starship.rs/install.sh | shi
