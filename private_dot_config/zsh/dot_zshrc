@@ -36,7 +36,7 @@ bindkey "$terminfo[kcud1]" history-substring-search-down
 antidote load
 
 # prompt
-prompt starship
+prompt starship syne
 # prompt p10k pure
 
 # python
