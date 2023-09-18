@@ -42,6 +42,7 @@ zstyle :zle:edit-command-line editor vim
 zstyle :omz:plugins:keychain agents ssh
 zstyle :omz:plugins:keychain identities id_ed25519
 zstyle :omz:plugins:keychain options --quiet
+zstyle :omz:plugins:keychain dir "${XDG_RUNTIME_DIR}/keychain"
 
 #
 # Local

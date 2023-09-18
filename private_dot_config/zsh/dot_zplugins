@@ -23,7 +23,6 @@ mattmc3/zdotdir path:plugins/p10k-instaprompt
 ## OMZ
 # ohmyzsh/ohmyzsh path:lib
 # ohmyzsh/ohmyzsh path:plugins/git
-ohmyzsh/ohmyzsh path:plugins/keychain
 ohmyzsh/ohmyzsh path:plugins/git-auto-fetch
 ohmyzsh/ohmyzsh path:plugins/colorize
 ohmyzsh/ohmyzsh path:plugins/colored-man-pages
@@ -33,6 +32,7 @@ ohmyzsh/ohmyzsh path:plugins/magic-enter
 # ohmyzsh/ohmyzsh path:plugins/fancy-ctrl-z
 
 ## Custom Plugins
+$ZDOTDIR/plugins/keychain
 
 # Add Fish-like autosuggestions to your ZSH.
 zsh-users/zsh-autosuggestions
