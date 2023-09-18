@@ -1,0 +1,22 @@
+[init]
+    defaultBranch = main
+[user]
+    name = Syne Ardwin
+    email = syneardwin@pm.me
+[core]
+    excludesfile = {{ .chezmoi.homeDir }}/.config/git/global.gitignore
+[pull]
+    rebase = true
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+
+[alias]
+    ls = log --oneline
+    caa = commit -a --amend -C HEAD
+    cob = checkout -b
+    clean-branches = "!f () { git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D }; f"
+    bclean = "!function { DEFAULT=$(git default); git branch --merged ${1-$DEFAULT} | grep -v " ${1-$DEFAULT}$" | xargs git branch -d;}"
