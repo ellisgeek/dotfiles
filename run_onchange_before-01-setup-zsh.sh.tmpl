@@ -14,6 +14,6 @@ if [[ $(getent passwd $USER | cut -d ':' -f 7) != *"zsh"* ]]; then
 fi
 
 {{ if not (lookPath "starship") -}}
-curl -sS https://starship.rs/install.sh | shi
+curl -sS https://starship.rs/install.sh | sh
 {{ end -}}
 
