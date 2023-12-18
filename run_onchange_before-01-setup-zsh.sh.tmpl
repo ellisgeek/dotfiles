@@ -4,6 +4,7 @@ echo -e "\n01 - Setting up ZSH"
 
 {{ if not (and (lookPath "zsh") (lookPath "git") (lookPath "fzf")) -}}
 echo -e "01.01 - Installing ZSH"
+sudo apt-get -y upgrade
 sudo apt-get -y install zsh git fzf
 {{ end -}}
 
