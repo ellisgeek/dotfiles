@@ -1,5 +1,10 @@
 #!/bin/bash
 
+echo -e "\n00 - Setting up Apt"
+
+sudo apt-get -y update
+sudo apt-get -y upgrade
+
 echo -e "\n01 - Setting up ZSH"
 
 {{ if not (and (lookPath "zsh") (lookPath "git") (lookPath "fzf")) -}}
