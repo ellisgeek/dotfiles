@@ -41,7 +41,7 @@ antidote load
 
 # python
 eval "$(pyenv init -)"
-eval "$(register-python-argcomplete3 pipx)"
+eval "$(register-python-argcomplete pipx)"
 
 [[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)" && export EDITOR="code --wait"
 
