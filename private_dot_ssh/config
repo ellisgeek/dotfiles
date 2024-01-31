@@ -5,3 +5,11 @@ Host *
     ControlMaster auto
     ControlPath ~/.ssh/sockets/%r_%h_%p
     ControlPersist 3600
+    SendEnv LANG LC_*
+
+Host racksw
+    Hostname 172.16.4.253
+    User cisco
+    KexAlgorithms +diffie-hellman-group1-sha1
+    HostKeyAlgorithms +ssh-rsa
+    Ciphers +aes256-cbc
