@@ -17,7 +17,7 @@ export ANTIDOTE_HOME=${XDG_CACHE_HOME:=~/.cache}/repos
 source $ZDOTDIR/.antidote/antidote.zsh
 
 # # Prompt
-# source $ZDOTDIR/themes/syne.p10k.zsh
+source $ZDOTDIR/themes/syne.p10k.zsh
 
 autoload -Uz bashcompinit && bashcompinit
 
@@ -36,7 +36,7 @@ bindkey "$terminfo[kcud1]" history-substring-search-down
 antidote load
 
 # prompt
-prompt starship syne
+# prompt starship syne
 # prompt p10k pure
 
 # python
